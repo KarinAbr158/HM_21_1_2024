@@ -7,13 +7,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int[] mData;
-    int dLength = 50;
-    RecyclerView rv;
+    private int[] mData;
+    private int dLength = 50;
+    private MyG adapter;
+    private RecyclerView rv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,5 +31,8 @@ public class MainActivity extends AppCompatActivity {
             mData[i] = i;
         }
         rv = findViewById(R.id.rv);
+        adapter = new MyG(this, mData);
+        rv.setAdapter(adapter);
+        rv.setLayoutManager(new LinearLayoutManager(this));
     }
 }
