@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     int[] mData;
     int dLength = 50;
-    RecyclerView bitch;
+    RecyclerView rv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +28,6 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < dLength; i++){
             mData[i] = i;
         }
-        bitch = findViewById(R.id.nigga);
+        rv = findViewById(R.id.rv);
     }
 }
